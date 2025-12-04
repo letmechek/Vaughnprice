@@ -1,24 +1,25 @@
+import Image from 'next/image';
 import { Reveal } from './Reveal';
 
 const technologies = [
-  'AWS',
-  'Azure',
-  'Google Cloud',
-  'Kubernetes',
-  'Docker',
-  'Terraform',
-  'Next.js',
-  'Node.js',
-  'Python',
-  'TypeScript',
-  'GraphQL',
-  'PostgreSQL',
-  'Kafka',
-  'Redis',
-  'OpenTelemetry',
-  'Datadog',
-  'Snowflake',
-  'Fivetran',
+  { name: 'AWS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg' },
+  { name: 'Azure', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg' },
+  { name: 'Google Cloud', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/googlecloud/googlecloud-original.svg' },
+  { name: 'Kubernetes', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-plain.svg' },
+  { name: 'Docker', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg' },
+  { name: 'Terraform', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/terraform/terraform-original.svg' },
+  { name: 'Next.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg' },
+  { name: 'Node.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg' },
+  { name: 'Python', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg' },
+  { name: 'TypeScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg' },
+  { name: 'GraphQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/graphql/graphql-plain.svg' },
+  { name: 'PostgreSQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg' },
+  { name: 'Kafka', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/apachekafka/apachekafka-original.svg' },
+  { name: 'Redis', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redis/redis-original.svg' },
+  { name: 'OpenTelemetry', icon: 'https://avatars.githubusercontent.com/u/69953400?s=200&v=4' },
+  { name: 'Datadog', icon: 'https://www.datadoghq.com/favicon.ico' },
+  { name: 'Snowflake', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/snowflake/snowflake-original.svg' },
+  { name: 'Fivetran', icon: 'https://avatars.githubusercontent.com/u/10154255?s=200&v=4' },
 ];
 
 export function TechnologyStack() {
@@ -38,12 +39,20 @@ export function TechnologyStack() {
                   ? 'hover:border-vp-coral'
                   : 'hover:border-vp-purple';
             return (
-              <Reveal key={tech} delay={index * 0.04}>
+              <Reveal key={tech.name} delay={index * 0.04}>
                 <div
                   className={`card-surface flex h-[140px] min-h-[140px] min-w-[150px] flex-col items-center justify-center rounded-2xl border-2 border-transparent px-6 text-center transition ${hoverClass}`}
                 >
-                  <div className="text-sm font-semibold text-white">{tech}</div>
-                  <div className="mt-4 h-12 w-12 rounded-full bg-white/5" />
+                  <div className="h-10 w-10 flex-shrink-0">
+                    <Image
+                      src={tech.icon}
+                      alt={`${tech.name} logo`}
+                      width={40}
+                      height={40}
+                      className="h-full w-full object-contain"
+                    />
+                  </div>
+                  <div className="mt-3 text-sm font-semibold text-white">{tech.name}</div>
                 </div>
               </Reveal>
             );
