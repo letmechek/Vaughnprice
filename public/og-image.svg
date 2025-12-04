@@ -1,0 +1,21 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop stop-color="#0A0E27" offset="0%"/>
+      <stop stop-color="#141B3D" offset="60%"/>
+      <stop stop-color="#0A0E27" offset="100%"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" x2="1" y1="0" y2="0">
+      <stop stop-color="#06B6D4" offset="0%"/>
+      <stop stop-color="#8B5CF6" offset="100%"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="980" cy="140" r="220" fill="#06B6D4" opacity="0.16" />
+  <circle cx="260" cy="520" r="260" fill="#8B5CF6" opacity="0.18" />
+  <rect x="80" y="80" width="1040" height="470" rx="28" fill="none" stroke="url(#accent)" stroke-opacity="0.35" stroke-width="3"/>
+  <text x="120" y="250" fill="#94A3B8" font-size="24" font-family="Space Grotesk, 'Segoe UI', sans-serif" letter-spacing="6">VAUGHN PRICE LIMITED</text>
+  <text x="120" y="340" fill="#F8FAFC" font-size="64" font-weight="700" font-family="Space Grotesk, 'Segoe UI', sans-serif">Engineering Tomorrow's</text>
+  <text x="120" y="414" fill="#F8FAFC" font-size="64" font-weight="700" font-family="Space Grotesk, 'Segoe UI', sans-serif">Enterprise Technology</text>
+  <text x="120" y="482" fill="#CBD5E1" font-size="28" font-family="Manrope, 'Segoe UI', sans-serif">Scalable systems. Secure infrastructure. Modern experiences.</text>
+</svg>
