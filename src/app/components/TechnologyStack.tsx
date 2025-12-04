@@ -18,7 +18,7 @@ const technologies = [
   { name: 'Redis', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redis/redis-original.svg' },
   { name: 'OpenTelemetry', icon: 'https://avatars.githubusercontent.com/u/69953400?s=200&v=4' },
   { name: 'Datadog', icon: 'https://www.datadoghq.com/favicon.ico' },
-  { name: 'Snowflake', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/snowflake/snowflake-original.svg' },
+  { name: 'Snowflake', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/snowflake/snowflake-original-wordmark.svg' },
   { name: 'Fivetran', icon: 'https://avatars.githubusercontent.com/u/10154255?s=200&v=4' },
 ];
 

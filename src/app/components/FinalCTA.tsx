@@ -19,7 +19,9 @@ export function FinalCTA() {
           <div className="mt-12">
             <a
               className="inline-flex h-16 w-60 items-center justify-center rounded-full bg-vp-cyan text-lg font-semibold text-slate-900 transition hover:scale-[1.02] hover:bg-[#2dd4f5]"
-              href="mailto:info@vaughnprice.com"
+              href="https://calendly.com/abdullahi-ali1017/30min"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               Schedule a Call
             </a>
