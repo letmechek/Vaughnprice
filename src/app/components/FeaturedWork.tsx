@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { Reveal } from './Reveal';
 
+
 export function FeaturedWork() {
   return (
     <section id="work" className="section-gap bg-vp-navy-dark">
@@ -9,7 +10,7 @@ export function FeaturedWork() {
           <div className="relative overflow-hidden rounded-3xl border-2 border-vp-cyan/60 shadow-glow">
             <div className="absolute inset-0 bg-gradient-to-t from-vp-navy-dark/50 via-transparent to-transparent" />
             <Image
-              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=900&fit=crop"
+              src="/2.png"
               alt="Featured enterprise platform preview"
               width={1200}
               height={900}
