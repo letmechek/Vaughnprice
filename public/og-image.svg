@@ -1,21 +1,19 @@
-<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
-      <stop stop-color="#0A0E27" offset="0%"/>
-      <stop stop-color="#141B3D" offset="60%"/>
-      <stop stop-color="#0A0E27" offset="100%"/>
-    </linearGradient>
-    <linearGradient id="accent" x1="0" x2="1" y1="0" y2="0">
-      <stop stop-color="#06B6D4" offset="0%"/>
-      <stop stop-color="#8B5CF6" offset="100%"/>
-    </linearGradient>
-  </defs>
-  <rect width="1200" height="630" fill="url(#bg)"/>
-  <circle cx="980" cy="140" r="220" fill="#06B6D4" opacity="0.16" />
-  <circle cx="260" cy="520" r="260" fill="#8B5CF6" opacity="0.18" />
-  <rect x="80" y="80" width="1040" height="470" rx="28" fill="none" stroke="url(#accent)" stroke-opacity="0.35" stroke-width="3"/>
-  <text x="120" y="250" fill="#94A3B8" font-size="24" font-family="Space Grotesk, 'Segoe UI', sans-serif" letter-spacing="6">VAUGHN PRICE LIMITED</text>
-  <text x="120" y="340" fill="#F8FAFC" font-size="64" font-weight="700" font-family="Space Grotesk, 'Segoe UI', sans-serif">Engineering Tomorrow's</text>
-  <text x="120" y="414" fill="#F8FAFC" font-size="64" font-weight="700" font-family="Space Grotesk, 'Segoe UI', sans-serif">Enterprise Technology</text>
-  <text x="120" y="482" fill="#CBD5E1" font-size="28" font-family="Manrope, 'Segoe UI', sans-serif">Scalable systems. Secure infrastructure. Modern experiences.</text>
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#F2EADF"/>
+  <circle cx="1048" cy="110" r="120" fill="#1F4D49" fill-opacity="0.12"/>
+  <circle cx="176" cy="520" r="150" fill="#B96A3D" fill-opacity="0.12"/>
+  <path d="M96 134H1104" stroke="#D6C5B2"/>
+  <path d="M160 74V556" stroke="#D6C5B2"/>
+  <circle cx="812" cy="182" r="92" stroke="#1F4D49" stroke-opacity="0.35"/>
+  <circle cx="354" cy="425" r="116" stroke="#B96A3D" stroke-opacity="0.35"/>
+  <rect x="796" y="336" width="130" height="130" transform="rotate(45 796 336)" stroke="#16110F" stroke-opacity="0.16"/>
+  <rect x="116" y="126" width="94" height="94" rx="24" fill="#FBF7F1" stroke="#E0D1BF"/>
+  <path d="M138 205L162 146L177 179L201 146" stroke="#16110F" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M153 182H201" stroke="#B96A3D" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="201" cy="146" r="10" fill="#1F4D49"/>
+  <text x="255" y="192" fill="#5B4A42" font-family="Arial, sans-serif" font-size="24" letter-spacing="8">VAUGHN PRICE</text>
+  <text x="255" y="240" fill="#16110F" font-family="Georgia, serif" font-size="54">Limited</text>
+  <text x="96" y="340" fill="#16110F" font-family="Georgia, serif" font-size="92">Precision systems,</text>
+  <text x="96" y="424" fill="#16110F" font-family="Georgia, serif" font-size="92">crafted end-to-end.</text>
+  <text x="96" y="512" fill="#5B4A42" font-family="Arial, sans-serif" font-size="26">Platform engineering / Data systems / Digital products / AI operations</text>
 </svg>

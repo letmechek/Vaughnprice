@@ -1,62 +1,86 @@
 import Image from 'next/image';
 import { Reveal } from './Reveal';
 
-const technologies = [
-  { name: 'AWS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg' },
-  { name: 'Azure', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg' },
-  { name: 'Google Cloud', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/googlecloud/googlecloud-original.svg' },
-  { name: 'Kubernetes', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-plain.svg' },
-  { name: 'Docker', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg' },
-  { name: 'Terraform', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/terraform/terraform-original.svg' },
-  { name: 'Next.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg' },
-  { name: 'Node.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg' },
-  { name: 'Python', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg' },
-  { name: 'TypeScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg' },
-  { name: 'GraphQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/graphql/graphql-plain.svg' },
-  { name: 'PostgreSQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg' },
-  { name: 'Kafka', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/apachekafka/apachekafka-original.svg' },
-  { name: 'Redis', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redis/redis-original.svg' },
-  { name: 'OpenTelemetry', icon: 'https://avatars.githubusercontent.com/u/69953400?s=200&v=4' },
-  { name: 'Datadog', icon: 'https://www.datadoghq.com/favicon.ico' },
-  { name: 'Snowflake', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/snowflake/snowflake-original-wordmark.svg' },
-  { name: 'Fivetran', icon: 'https://avatars.githubusercontent.com/u/10154255?s=200&v=4' },
+const groups = [
+  {
+    title: 'Experience layer',
+    items: [
+      { name: 'Next.js', icon: '/icons/nextjs.svg' },
+      { name: 'Node.js', icon: '/icons/nodejs.svg' },
+      { name: 'Python', icon: '/icons/python.svg' },
+      { name: 'TypeScript', icon: '/icons/typescript.svg' },
+    ],
+  },
+  {
+    title: 'Infrastructure layer',
+    items: [
+      { name: 'AWS', icon: '/icons/aws.svg' },
+      { name: 'Azure', icon: '/icons/azure.svg' },
+      { name: 'Google Cloud', icon: '/icons/gcp.svg' },
+      { name: 'Kubernetes', icon: '/icons/kubernetes.svg' },
+      { name: 'Docker', icon: '/icons/docker.svg' },
+      { name: 'Terraform', icon: '/icons/terraform.svg' },
+    ],
+  },
+  {
+    title: 'Data and intelligence',
+    items: [
+      { name: 'PostgreSQL', icon: '/icons/postgresql.svg' },
+      { name: 'Kafka', icon: '/icons/kafka.svg' },
+      { name: 'Redis', icon: '/icons/redis.svg' },
+      { name: 'Snowflake', icon: '/icons/snowflake.svg' },
+      { name: 'Fivetran', icon: '/icons/fivetran.svg' },
+      { name: 'OpenTelemetry', icon: '/icons/opentelemetry.svg' },
+      { name: 'GraphQL', icon: '/icons/graphql.svg' },
+      { name: 'Datadog', icon: '/icons/datadog.svg' },
+    ],
+  },
 ];
 
 export function TechnologyStack() {
   return (
-    <section id="technology" className="section-gap bg-vp-navy-dark">
+    <section id="stack" className="section-gap border-t border-[var(--line)] bg-[rgba(6,14,25,0.38)]">
       <div className="container-grid">
-        <Reveal className="mx-auto max-w-3xl text-center">
-          <h2 className="text-4xl font-semibold text-white md:text-5xl">Technologies We Master</h2>
+        <Reveal className="grid gap-8 lg:grid-cols-[0.74fr_1.26fr] lg:items-end">
+          <div>
+            <div className="eyebrow">Technology substrate</div>
+            <h2 className="display-title mt-6 text-[3rem] sm:text-[4rem] lg:text-[4.4rem]">
+              The stack underneath the ambition.
+            </h2>
+          </div>
+          <p className="max-w-2xl text-lg leading-8 text-[var(--ink-soft)]">
+            We use the right layer for the right problem: frontend systems, backend services,
+            infrastructure, data movement, telemetry, and intelligent tooling that can evolve with
+            the business.
+          </p>
         </Reveal>
-        <div className="mt-[60px] grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-6">
-          {technologies.map((tech, index) => {
-            const row = Math.floor(index / 6);
-            const hoverClass =
-              row === 0
-                ? 'hover:border-vp-cyan'
-                : row === 1
-                  ? 'hover:border-vp-coral'
-                  : 'hover:border-vp-purple';
-            return (
-              <Reveal key={tech.name} delay={index * 0.04}>
-                <div
-                  className={`card-surface flex h-[140px] min-h-[140px] min-w-[150px] flex-col items-center justify-center rounded-2xl border-2 border-transparent px-6 text-center transition ${hoverClass}`}
-                >
-                  <div className="h-10 w-10 flex-shrink-0">
-                    <Image
-                      src={tech.icon}
-                      alt={`${tech.name} logo`}
-                      width={40}
-                      height={40}
-                      className="h-full w-full object-contain"
-                    />
-                  </div>
-                  <div className="mt-3 text-sm font-semibold text-white">{tech.name}</div>
+
+        <div className="mt-14 grid gap-8 xl:grid-cols-[0.8fr_1fr_1.2fr]">
+          {groups.map((group, groupIndex) => (
+            <Reveal key={group.title} delay={groupIndex * 0.08}>
+              <div className="system-card rounded-[30px] p-6 md:p-7">
+                <div className="flex items-center justify-between border-b border-[var(--line)] pb-5">
+                  <h3 className="text-xl text-[var(--ink)]">{group.title}</h3>
+                  <span className="text-[11px] uppercase tracking-[0.28em] text-[var(--cyan)]">
+                    {group.items.length} tools
+                  </span>
                 </div>
-              </Reveal>
-            );
-          })}
+                <div className="mt-6 grid grid-cols-2 gap-4">
+                  {group.items.map((tech) => (
+                    <div
+                      key={tech.name}
+                      className="rounded-[22px] border border-[var(--line)] bg-[rgba(9,28,49,0.72)] p-4"
+                    >
+                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[rgba(247,251,255,0.92)]">
+                        <Image src={tech.icon} alt={`${tech.name} logo`} width={22} height={22} className="h-6 w-6 object-contain" />
+                      </div>
+                      <div className="mt-4 text-sm leading-6 text-[var(--ink)]">{tech.name}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </Reveal>
+          ))}
         </div>
       </div>
     </section>

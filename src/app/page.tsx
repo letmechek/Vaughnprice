@@ -14,7 +14,7 @@ const structuredData = {
   '@type': 'Organization',
   name: 'Vaughn Price Limited',
   url: 'https://vaughnprice.com',
-  logo: 'https://vaughnprice.com/og-image.svg',
+  logo: 'https://vaughnprice.com/brand-mark.svg',
   contactPoint: {
     '@type': 'ContactPoint',
     contactType: 'sales',
@@ -22,9 +22,17 @@ const structuredData = {
     areaServed: 'Global',
     availableLanguage: ['English'],
   },
-  sameAs: ['https://www.linkedin.com', 'https://twitter.com'],
   description:
-    "Enterprise technology partner delivering scalable systems, platform engineering, and intelligent products for modern businesses.",
+    'Vaughn Price builds websites, mobile apps, enterprise systems, cloud platforms, data products, and AI-enabled software for ambitious businesses.',
+  knowsAbout: [
+    'Website development',
+    'Mobile app development',
+    'Enterprise systems',
+    'Platform engineering',
+    'Cloud infrastructure',
+    'Data platforms',
+    'AI products',
+  ],
 };
 
 export default function Home() {

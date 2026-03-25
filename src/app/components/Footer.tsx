@@ -1,89 +1,57 @@
-import Image from 'next/image';
+import { BrandMark } from './BrandMark';
+
+const columns = [
+  {
+    title: 'Build Types',
+    links: ['Web platforms', 'Mobile apps', 'Enterprise systems', 'AI software'],
+  },
+  {
+    title: 'System Layers',
+    links: ['Product design', 'Engineering', 'Cloud and data', 'Scale and enablement'],
+  },
+];
 
 export function Footer() {
-  const columns = [
-    {
-      title: 'Services',
-      links: ['Platform Engineering', 'Cloud Modernization', 'Data Platforms', 'AI Products'],
-    },
-    {
-      title: 'Resources',
-      links: ['Blog', 'Case Studies', 'Documentation', 'Support'],
-    },
-  ];
-
   return (
-    <footer className="bg-[#050812] pt-20 pb-20">
+    <footer className="border-t border-[var(--line)] bg-[rgba(6,14,25,0.46)] pb-10 pt-14">
       <div className="container-grid">
-        <div className="grid gap-12 lg:grid-cols-4 lg:gap-12">
+        <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr_0.8fr_0.8fr]">
           <div>
-            <div className="flex items-center gap-3">
-              <Image
-                src="/logo5.png"
-                alt="Vaughn Price Limited logo"
-                width={50}
-                height={50}
-                className="h-12 w-auto"
-                loading="lazy"
-              />
-              <div className="flex flex-col leading-tight">
-                <span className="text-xs tracking-[0.24em] text-slate-400">VAUGHN PRICE</span>
-                <span className="text-lg font-semibold text-white">Limited</span>
-              </div>
-            </div>
-            <p className="mt-5 text-sm leading-relaxed text-slate-500">
-              Enterprise technology partner building resilient platforms, secure infrastructure, and
-              intuitive experiences for modern businesses.
+            <BrandMark />
+            <p className="mt-6 max-w-sm text-sm leading-7 text-[var(--ink-soft)]">
+              Vaughn Price Limited builds the software systems behind modern business, from public
+              product experiences to internal operations, infrastructure, data, and AI-powered tools.
             </p>
-            <div className="mt-6 flex gap-4">
-              {[
-                { icon: 'LI', href: 'https://www.linkedin.com' },
-                { icon: 'X', href: 'https://twitter.com' },
-                { icon: 'GH', href: 'https://github.com' },
-              ].map((item) => (
-                <a
-                  key={item.icon}
-                  href={item.href}
-                  aria-label={item.icon}
-                  className="flex h-8 w-8 items-center justify-center rounded-full border border-white/10 text-sm text-white transition hover:border-vp-cyan hover:text-vp-cyan"
-                >
-                  {item.icon}
-                </a>
-              ))}
-            </div>
           </div>
+
           {columns.map((column) => (
             <div key={column.title}>
-              <h4 className="text-base font-semibold text-white">{column.title}</h4>
-              <div className="mt-5 flex flex-col gap-3 text-sm text-slate-400">
+              <h4 className="text-[11px] uppercase tracking-[0.3em] text-[var(--cyan)]">{column.title}</h4>
+              <div className="mt-5 flex flex-col gap-3 text-sm text-[var(--ink)]">
                 {column.links.map((link) => (
-                  <a key={link} href="#" className="transition hover:text-vp-cyan">
+                  <a key={link} href="#services">
                     {link}
                   </a>
                 ))}
               </div>
             </div>
           ))}
+
           <div>
-            <h4 className="text-base font-semibold text-white">Get in Touch</h4>
-            <div className="mt-5 space-y-3 text-sm text-slate-400">
-              <a href="mailto:info@vaughnprice.com" className="text-vp-cyan">
-                info@vaughnprice.com
-              </a>
-              <p>+254793022425</p>
+            <h4 className="text-[11px] uppercase tracking-[0.3em] text-[var(--cyan)]">Contact</h4>
+            <div className="mt-5 space-y-3 text-sm text-[var(--ink)]">
+              <a href="mailto:info@vaughnprice.com">info@vaughnprice.com</a>
+              <p>+254 793 022 425</p>
               <p>21 Fcb Mihrab</p>
             </div>
           </div>
         </div>
-        <div className="mt-16 border-t border-white/10 pt-8 flex flex-col gap-4 md:flex-row md:items-center md:justify-between text-sm text-slate-500">
-          <span>© {new Date().getFullYear()} Vaughn Price Limited. All rights reserved.</span>
+
+        <div className="mt-14 flex flex-col gap-3 border-t border-[var(--line)] pt-6 text-xs uppercase tracking-[0.2em] text-[var(--ink-soft)] md:flex-row md:items-center md:justify-between">
+          <span>© {new Date().getFullYear()} Vaughn Price Limited</span>
           <div className="flex gap-6">
-            <a href="#" className="transition hover:text-vp-cyan">
-              Privacy Policy
-            </a>
-            <a href="#" className="transition hover:text-vp-cyan">
-              Terms of Service
-            </a>
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
           </div>
         </div>
       </div>
