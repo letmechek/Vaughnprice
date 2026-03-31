@@ -14,7 +14,7 @@ const structuredData = {
   '@type': 'Organization',
   name: 'Vaughn Price Limited',
   url: 'https://vaughnprice.com',
-  logo: 'https://vaughnprice.com/brand-mark.svg',
+  logo: 'https://vaughnprice.com/logo.png',
   contactPoint: {
     '@type': 'ContactPoint',
     contactType: 'sales',

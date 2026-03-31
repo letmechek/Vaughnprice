@@ -39,10 +39,18 @@ export function Footer() {
 
           <div>
             <h4 className="text-[11px] uppercase tracking-[0.3em] text-[var(--cyan)]">Contact</h4>
-            <div className="mt-5 space-y-3 text-sm text-[var(--ink)]">
+            <div className="mt-5 space-y-5 text-sm text-[var(--ink)]">
               <a href="mailto:info@vaughnprice.com">info@vaughnprice.com</a>
-              <p>+254 793 022 425</p>
-              <p>21 Fcb Mihrab</p>
+              <div className="space-y-1">
+                <p className="text-[11px] uppercase tracking-[0.22em] text-[var(--ink-soft)]">Kenya</p>
+                <p>+254 793 022 425</p>
+                <p>21 Fcb Mihrab</p>
+              </div>
+              <div className="space-y-1">
+                <p className="text-[11px] uppercase tracking-[0.22em] text-[var(--ink-soft)]">Canada</p>
+                <p>+1 647 453 9672</p>
+                <p>504 Jarvis St Toronto, ON M4Y 2H6</p>
+              </div>
             </div>
           </div>
         </div>

@@ -70,9 +70,9 @@ export function Hero() {
               </div>
             </div>
 
-            <div className="mt-6 grid gap-4 xl:grid-cols-[1.05fr_0.95fr]">
-              <div className="system-card pulse-grid rounded-[28px] p-5">
-                <div className="relative min-h-[290px] overflow-hidden rounded-[20px] border border-[var(--line)] bg-[linear-gradient(180deg,rgba(8,20,35,0.9),rgba(9,28,49,0.9))] p-5">
+            <div className="mt-6 grid gap-4 xl:grid-cols-[minmax(0,1.3fr)_minmax(0,0.9fr)]">
+              <div className="system-card pulse-grid rounded-[28px] p-4 sm:p-5">
+                <div className="relative min-h-[360px] overflow-hidden rounded-[20px] border border-[var(--line)] bg-[linear-gradient(180deg,rgba(8,20,35,0.9),rgba(9,28,49,0.9))] p-5 sm:min-h-[460px] lg:min-h-[540px]">
                   <div className="absolute left-8 top-8 h-24 w-24 rounded-full border border-[rgba(63,140,255,0.4)]" />
                   <div className="absolute right-12 top-14 h-36 w-36 rounded-full border border-[rgba(45,225,252,0.28)]" />
                   <div className="absolute left-12 top-20 h-[60%] w-px bg-[rgba(120,170,220,0.16)]" />
@@ -81,11 +81,11 @@ export function Hero() {
                   <div className="absolute right-12 bottom-14 flex h-8 w-8 items-center justify-center rounded-full border border-[rgba(45,225,252,0.3)]">
                     <div className="orbit-dot h-2 w-2 rounded-full bg-[var(--cyan)]" />
                   </div>
-                  <div className="relative mt-32 max-w-[15rem]">
+                  <div className="relative z-10 mt-36 max-w-[14rem] rounded-[24px] bg-[rgba(6,16,29,0.36)] px-4 py-5 backdrop-blur-[2px] sm:mt-44 sm:max-w-[16rem] sm:px-5 lg:mt-52 lg:max-w-[18rem] xl:max-w-[19rem]">
                     <p className="text-[11px] uppercase tracking-[0.28em] text-[var(--ink-soft)]">
                       Delivery engine
                     </p>
-                    <p className="mt-4 text-[clamp(2rem,4vw,3.2rem)] leading-[0.9] text-[var(--ink)]">
+                    <p className="mt-4 text-[clamp(2.2rem,4.2vw,3.8rem)] leading-[0.9] tracking-[-0.035em] text-[var(--ink)]">
                       Design.
                       <br />
                       Build.

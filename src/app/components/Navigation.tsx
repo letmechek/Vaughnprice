@@ -33,7 +33,7 @@ export function Navigation() {
         }`}
       >
         <div className="container-grid flex h-20 items-center justify-between">
-          <Link href="#hero" className="relative z-50">
+          <Link href="#hero" className="relative z-50 inline-flex shrink-0 items-center">
             <BrandMark />
           </Link>
 
