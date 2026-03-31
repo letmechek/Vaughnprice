@@ -1,13 +1,21 @@
+import Link from 'next/link';
 import { BrandMark } from './BrandMark';
+import { buildTypePages, systemLayerPages } from '../lib/footerLinks';
 
 const columns = [
   {
     title: 'Build Types',
-    links: ['Web platforms', 'Mobile apps', 'Enterprise systems', 'AI software'],
+    links: buildTypePages.map((page) => ({
+      label: page.label,
+      href: `/build-types/${page.slug}`,
+    })),
   },
   {
     title: 'System Layers',
-    links: ['Product design', 'Engineering', 'Cloud and data', 'Scale and enablement'],
+    links: systemLayerPages.map((page) => ({
+      label: page.label,
+      href: `/system-layers/${page.slug}`,
+    })),
   },
 ];
 
@@ -29,9 +37,9 @@ export function Footer() {
               <h4 className="text-[11px] uppercase tracking-[0.3em] text-[var(--cyan)]">{column.title}</h4>
               <div className="mt-5 flex flex-col gap-3 text-sm text-[var(--ink)]">
                 {column.links.map((link) => (
-                  <a key={link} href="#services">
-                    {link}
-                  </a>
+                  <Link key={link.href} href={link.href} className="transition hover:text-[var(--cyan)]">
+                    {link.label}
+                  </Link>
                 ))}
               </div>
             </div>
@@ -58,8 +66,8 @@ export function Footer() {
         <div className="mt-14 flex flex-col gap-3 border-t border-[var(--line)] pt-6 text-xs uppercase tracking-[0.2em] text-[var(--ink-soft)] md:flex-row md:items-center md:justify-between">
           <span>© {new Date().getFullYear()} Vaughn Price Limited</span>
           <div className="flex gap-6">
-            <a href="#">Privacy</a>
-            <a href="#">Terms</a>
+            <Link href="/privacy">Privacy</Link>
+            <Link href="/terms">Terms</Link>
           </div>
         </div>
       </div>
