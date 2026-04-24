@@ -57,8 +57,11 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${bodyFont.variable} ${displayFont.variable} antialiased`}>
+        <a href="#main-content" className="skip-to-content">
+          Skip to main content
+        </a>
         {children}
-        <div className="grain-overlay" aria-hidden />
+        <div className="grain-overlay" aria-hidden="true" />
       </body>
     </html>
   );

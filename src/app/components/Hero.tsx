@@ -1,112 +1,249 @@
-const lanes = ['Web platforms', 'Mobile apps', 'Enterprise systems', 'AI software'];
+const layers = [
+  {
+    index: '01',
+    label: 'Experience layer',
+    title: 'Web & Mobile',
+    items: ['Brand websites', 'Product interfaces', 'Native mobile apps'],
+    accent: 'var(--blue)',
+    icon: (
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <rect x="3" y="3" width="18" height="18" rx="2" />
+        <path d="M3 9h18M9 21V9" />
+      </svg>
+    ),
+  },
+  {
+    index: '02',
+    label: 'Systems layer',
+    title: 'Business Logic',
+    items: ['Enterprise software', 'Workflow automation', 'Internal tooling'],
+    accent: 'var(--cyan)',
+    icon: (
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <path d="M12 2L2 7l10 5 10-5-10-5z" />
+        <path d="M2 17l10 5 10-5M2 12l10 5 10-5" />
+      </svg>
+    ),
+  },
+  {
+    index: '03',
+    label: 'Infrastructure layer',
+    title: 'Cloud & Data',
+    items: ['Cloud platforms', 'Data pipelines', 'Observability'],
+    accent: 'var(--violet)',
+    icon: (
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z" />
+      </svg>
+    ),
+  },
+  {
+    index: '04',
+    label: 'Intelligence layer',
+    title: 'AI & Automation',
+    items: ['Applied AI products', 'ML pipelines', 'Intelligent workflows'],
+    accent: 'var(--teal)',
+    icon: (
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="3" />
+        <path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83" />
+      </svg>
+    ),
+  },
+];
 
-const metrics = [
-  { label: 'Delivery modes', value: 'Design / Build / Scale' },
-  { label: 'Core output', value: 'Products + Infrastructure' },
-  { label: 'Operating style', value: 'Hands-on senior execution' },
+const proofItems = [
+  { value: 'Four', descriptor: 'integrated service layers' },
+  { value: 'Senior', descriptor: 'execution, every project' },
+  { value: 'End-to-end', descriptor: 'from idea to infrastructure' },
 ];
 
 export function Hero() {
   return (
-    <section id="hero" className="relative overflow-hidden pt-24">
-      <div className="hero-radial left-[-8rem] top-28 h-[18rem] w-[18rem] bg-[rgba(63,140,255,0.24)]" />
-      <div className="hero-radial right-[-10rem] top-20 h-[20rem] w-[20rem] bg-[rgba(45,225,252,0.18)]" />
-      <div className="hero-radial bottom-[-6rem] left-[32%] h-[16rem] w-[16rem] bg-[rgba(123,124,255,0.16)]" />
+    <section id="hero" className="relative overflow-hidden" aria-labelledby="hero-heading">
 
-      <div className="container-grid grid min-h-[calc(100vh-6rem)] items-center gap-14 pb-16 pt-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 lg:pb-20 lg:pt-20">
-        <div className="max-w-3xl xl:max-w-[50rem]">
-          <div className="eyebrow">Future-facing systems engineering</div>
-          <h1 className="display-title mt-6 text-[3.6rem] sm:text-[5rem] lg:text-[6.1rem] xl:text-[7rem]">
-            We build the
-            <br />
-            software layer
-            <br />
-            of modern business.
-          </h1>
-          <p className="mt-8 max-w-2xl text-lg leading-8 text-[var(--ink-soft)] md:text-xl">
-            Vaughn Price designs and ships websites, mobile apps, enterprise systems, cloud
-            platforms, data products, and AI-powered tools for companies that want to build beyond
-            today&apos;s standard playbook.
-          </p>
+      {/* Ambient orbs — static */}
+      <div className="hero-radial left-[-12rem] top-20 h-[32rem] w-[32rem] bg-[rgba(79,163,255,0.16)]" aria-hidden="true" />
+      <div className="hero-radial right-[-14rem] top-10 h-[30rem] w-[30rem] bg-[rgba(45,225,252,0.11)]" aria-hidden="true" />
+      <div className="hero-radial bottom-[8%] left-[42%] h-[24rem] w-[24rem] bg-[rgba(131,132,255,0.10)]" aria-hidden="true" />
 
-          <div className="mt-10 flex flex-wrap gap-4">
-            <a
-              href="#contact"
-              className="neon-outline inline-flex h-14 items-center justify-center rounded-full border border-[rgba(45,225,252,0.24)] bg-[rgba(10,24,42,0.94)] px-7 text-sm font-medium uppercase tracking-[0.2em] text-[var(--ink)] transition hover:-translate-y-0.5 hover:border-[rgba(45,225,252,0.45)]"
+      <div className="container-grid flex min-h-[100dvh] flex-col justify-between pb-0 pt-24">
+
+        {/* ── Upper: Headline left / Descriptor right ────────────────── */}
+        <div className="grid flex-1 gap-10 py-14 lg:grid-cols-[1.15fr_0.85fr] lg:items-end lg:gap-20 lg:py-20">
+
+          {/* Left — headline */}
+          <div>
+            <div className="eyebrow">Future-facing systems engineering</div>
+            <h1
+              id="hero-heading"
+              className="display-title mt-7 text-[3.6rem] sm:text-[5rem] lg:text-[6.4rem] xl:text-[7.6rem]"
             >
-              Launch A Project
-            </a>
-            <a
-              href="#services"
-              className="inline-flex h-14 items-center justify-center border-b border-[var(--cyan)] px-1 text-sm font-medium uppercase tracking-[0.2em] text-[var(--cyan)]"
-            >
-              Explore Capabilities
-            </a>
+              We build the
+              <br />
+              <span
+                className="bg-clip-text text-transparent"
+                style={{
+                  backgroundImage: 'linear-gradient(100deg, var(--cyan) 0%, var(--violet) 70%)',
+                }}
+              >
+                software layer
+              </span>
+              <br />
+              <span className="text-[var(--ink-soft)]">of modern business.</span>
+            </h1>
           </div>
 
-          <div className="mt-14 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
-            {lanes.map((lane) => (
-              <div key={lane} className="rounded-full border border-[var(--line)] bg-[rgba(11,26,45,0.75)] px-4 py-3 text-[11px] uppercase tracking-[0.22em] text-[var(--ink-soft)]">
-                {lane}
+          {/* Right — descriptor + CTAs + micro-proof */}
+          <div className="flex flex-col justify-end">
+            <p className="max-w-[46ch] text-lg leading-[1.8] text-[var(--ink-soft)]">
+              Vaughn Price designs and ships websites, mobile apps, enterprise systems, cloud
+              platforms, data products, and AI-powered tools for companies building beyond
+              today&apos;s standard playbook.
+            </p>
+
+            <div className="mt-9 flex flex-wrap gap-3.5">
+              <a
+                href="#contact"
+                className="btn-primary neon-outline"
+                aria-label="Launch a project with Vaughn Price"
+              >
+                Launch A Project
+              </a>
+              <a
+                href="#services"
+                className="btn-ghost"
+                aria-label="Explore our capabilities"
+              >
+                Explore Capabilities
+              </a>
+            </div>
+
+            {/* Micro-proof strip */}
+            <dl className="mt-10 grid grid-cols-3 gap-6 border-t border-[var(--line)] pt-8">
+              {proofItems.map((item) => (
+                <div key={item.value}>
+                  <dt className="text-[11px] uppercase tracking-[0.22em] text-[var(--ink-dim)]">
+                    {item.descriptor}
+                  </dt>
+                  <dd className="mt-2 text-lg font-semibold text-[var(--ink)]" style={{ fontFamily: 'var(--font-display)' }}>
+                    {item.value}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        </div>
+
+        {/* ── Architecture separator ─────────────────────────────────── */}
+        <div className="relative flex items-center gap-5" aria-hidden="true">
+          <div className="h-px flex-1 bg-[var(--line)]" />
+          <span className="shrink-0 text-[10px] uppercase tracking-[0.38em] text-[var(--ink-dim)]">
+            Systems architecture
+          </span>
+          <div className="h-px flex-1 bg-[var(--line)]" />
+        </div>
+
+        {/* ── Architecture layer cards ───────────────────────────────── */}
+        <div
+          role="img"
+          aria-label="Four-layer systems architecture: Experience, Business Logic, Cloud and Data, AI and Automation"
+          className="pb-8 pt-5"
+        >
+          {/* Desktop: 4 cards + 3 connectors in a 7-col grid */}
+          <div className="hidden lg:grid" style={{ gridTemplateColumns: '1fr 2.5rem 1fr 2.5rem 1fr 2.5rem 1fr' }}>
+            {layers.flatMap((layer, i) => {
+              const card = (
+                <div
+                  key={layer.index}
+                  className="system-card rounded-[var(--radius-lg)] px-6 py-5"
+                >
+                  <div className="flex items-start justify-between">
+                    <span
+                      className="text-[10px] uppercase tracking-[0.32em]"
+                      style={{ color: layer.accent }}
+                    >
+                      {layer.index}
+                    </span>
+                    <span
+                      className="flex h-8 w-8 items-center justify-center rounded-xl border border-[var(--line)]"
+                      style={{ color: layer.accent }}
+                    >
+                      {layer.icon}
+                    </span>
+                  </div>
+                  <p className="mt-3 text-[11px] uppercase tracking-[0.22em] text-[var(--ink-dim)]">
+                    {layer.label}
+                  </p>
+                  <h2 className="mt-1 text-xl font-semibold leading-tight text-[var(--ink)]">
+                    {layer.title}
+                  </h2>
+                  <ul className="mt-4 space-y-2" aria-label={`${layer.title} capabilities`}>
+                    {layer.items.map((item) => (
+                      <li key={item} className="flex items-center gap-2.5 text-[12px] text-[var(--ink-soft)]">
+                        <span
+                          className="h-1 w-1 shrink-0 rounded-full"
+                          style={{ background: layer.accent, opacity: 0.65 }}
+                          aria-hidden="true"
+                        />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                  <div
+                    className="mt-5 h-px"
+                    style={{ background: `linear-gradient(90deg, ${layer.accent}, transparent)`, opacity: 0.4 }}
+                    aria-hidden="true"
+                  />
+                </div>
+              );
+
+              const connector = i < layers.length - 1 ? (
+                <div
+                  key={`conn-${i}`}
+                  className="flex items-center justify-center"
+                  aria-hidden="true"
+                >
+                  <div className="flex flex-col items-center gap-1.5">
+                    <div className="h-px w-5 bg-[var(--line-strong)]" />
+                    <svg width="6" height="8" viewBox="0 0 6 8" fill="none">
+                      <path d="M0 0L6 4L0 8V0Z" fill="rgba(80,140,210,0.35)" />
+                    </svg>
+                  </div>
+                </div>
+              ) : null;
+
+              return connector ? [card, connector] : [card];
+            })}
+          </div>
+
+          {/* Mobile: 2×2 grid */}
+          <div className="grid grid-cols-2 gap-3 lg:hidden">
+            {layers.map((layer) => (
+              <div
+                key={layer.index}
+                className="system-card rounded-[var(--radius-md)] p-5"
+              >
+                <div className="flex items-center justify-between">
+                  <span
+                    className="text-[10px] uppercase tracking-[0.32em]"
+                    style={{ color: layer.accent }}
+                  >
+                    {layer.index}
+                  </span>
+                  <span className="flex h-7 w-7 items-center justify-center" style={{ color: layer.accent }}>
+                    {layer.icon}
+                  </span>
+                </div>
+                <h2 className="mt-3 text-base font-semibold text-[var(--ink)]">{layer.title}</h2>
+                <p className="mt-1 text-[11px] uppercase tracking-[0.18em] text-[var(--ink-dim)]">
+                  {layer.label}
+                </p>
               </div>
             ))}
           </div>
         </div>
 
-        <div className="relative">
-          <div className="system-card scanline rounded-[32px] p-6 sm:p-8">
-            <div className="absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(45,225,252,0.65),transparent)] beam" />
-            <div className="relative flex items-center justify-between border-b border-[var(--line)] pb-5">
-              <div>
-                <p className="text-[11px] uppercase tracking-[0.3em] text-[var(--ink-soft)]">
-                  Systems command view
-                </p>
-                <h2 className="mt-3 max-w-sm text-2xl leading-tight text-[var(--ink)] sm:text-[2rem]">
-                  Products, platforms, and operations connected as one build system.
-                </h2>
-              </div>
-              <div className="rounded-full border border-[rgba(45,225,252,0.2)] bg-[rgba(7,17,31,0.88)] px-3 py-1 text-[11px] uppercase tracking-[0.22em] text-[var(--cyan)]">
-                Live architecture
-              </div>
-            </div>
-
-            <div className="mt-6 grid gap-4 xl:grid-cols-[minmax(0,1.3fr)_minmax(0,0.9fr)]">
-              <div className="system-card pulse-grid rounded-[28px] p-4 sm:p-5">
-                <div className="relative min-h-[360px] overflow-hidden rounded-[20px] border border-[var(--line)] bg-[linear-gradient(180deg,rgba(8,20,35,0.9),rgba(9,28,49,0.9))] p-5 sm:min-h-[460px] lg:min-h-[540px]">
-                  <div className="absolute left-8 top-8 h-24 w-24 rounded-full border border-[rgba(63,140,255,0.4)]" />
-                  <div className="absolute right-12 top-14 h-36 w-36 rounded-full border border-[rgba(45,225,252,0.28)]" />
-                  <div className="absolute left-12 top-20 h-[60%] w-px bg-[rgba(120,170,220,0.16)]" />
-                  <div className="absolute left-12 right-10 top-28 h-px bg-[rgba(120,170,220,0.16)]" />
-                  <div className="absolute bottom-14 left-8 h-28 w-28 rotate-45 border border-[rgba(123,124,255,0.18)]" />
-                  <div className="absolute right-12 bottom-14 flex h-8 w-8 items-center justify-center rounded-full border border-[rgba(45,225,252,0.3)]">
-                    <div className="orbit-dot h-2 w-2 rounded-full bg-[var(--cyan)]" />
-                  </div>
-                  <div className="relative z-10 mt-36 max-w-[14rem] rounded-[24px] bg-[rgba(6,16,29,0.36)] px-4 py-5 backdrop-blur-[2px] sm:mt-44 sm:max-w-[16rem] sm:px-5 lg:mt-52 lg:max-w-[18rem] xl:max-w-[19rem]">
-                    <p className="text-[11px] uppercase tracking-[0.28em] text-[var(--ink-soft)]">
-                      Delivery engine
-                    </p>
-                    <p className="mt-4 text-[clamp(2.2rem,4.2vw,3.8rem)] leading-[0.9] tracking-[-0.035em] text-[var(--ink)]">
-                      Design.
-                      <br />
-                      Build.
-                      <br />
-                      Evolve.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex flex-col gap-4">
-                {metrics.map((metric) => (
-                  <div key={metric.label} className="rounded-[26px] border border-[var(--line)] bg-[rgba(8,20,35,0.78)] p-5 sm:p-6">
-                    <p className="text-[11px] uppercase tracking-[0.28em] text-[var(--ink-soft)]">{metric.label}</p>
-                    <p className="mt-4 text-[clamp(1.65rem,3vw,2.3rem)] leading-[1] text-[var(--ink)]">{metric.value}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

@@ -13,6 +13,11 @@ export function Reveal({ children, className = '', delay = 0 }: RevealProps) {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      setIsVisible(true);
+      return;
+    }
+
     const node = ref.current;
     if (!node) return;
 
@@ -25,7 +30,7 @@ export function Reveal({ children, className = '', delay = 0 }: RevealProps) {
           }
         });
       },
-      { threshold: 0.2 }
+      { threshold: 0.12 }
     );
 
     observer.observe(node);
