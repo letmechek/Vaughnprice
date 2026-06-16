@@ -155,5 +155,3 @@ small client components rather than making whole sections client-side.
   describe; semantic HTML with accessibility attributes (`aria-*`, labelled
   headings, skip-to-content link).
 - Run `npm run lint` (and ideally `npx tsc --noEmit`) before committing.
-</content>
-</invoke>
